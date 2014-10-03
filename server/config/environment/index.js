@@ -44,6 +44,8 @@ var all = {
   twitter: {
     clientID:     process.env.TWITTER_ID || 'app-id',
     clientSecret: process.env.TWITTER_SECRET || 'secret',
+    clientAccessToken: process.env.TWITTER_ACCESS_TOKEN || 'access_token',
+    clientAccessSecret: process.env.TWITTER_ACCESS_SECRET || 'access_secret',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/twitter/callback'
   },
 
