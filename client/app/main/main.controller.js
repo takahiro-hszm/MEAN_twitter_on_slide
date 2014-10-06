@@ -24,4 +24,13 @@ angular.module('tweetOnSlideApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+    socket.on('eeic2014', function (data) {
+
+       console.log(data);
+       console.log('client stream get!');
+       $http.post('/api/things', { name: data });
+
+    });
+
   });
