@@ -2,6 +2,21 @@
 
 angular.module('tweetOnSlideApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
+    var obj_2014 = {
+      "base":{
+        color:"white",
+        speed:"normal",
+        interval:"normal",
+        font_size:"60px",
+        loop:false
+      },
+      "comments":[
+      ]
+    };
+    nicoscreen.set(obj_2014);
+    nicoscreen.start();
+
+
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
@@ -14,7 +29,9 @@ angular.module('tweetOnSlideApp')
         return;
       }
       $http.post('/api/things', { name: $scope.newThing });
+      nicoscreen.add('あああああああああああああああ');
       $scope.newThing = '';
+
     };
 
     $scope.deleteThing = function(thing) {
@@ -27,10 +44,8 @@ angular.module('tweetOnSlideApp')
 
     socket.on('eeic2014', function (data) {
 
-       console.log(data);
-       console.log('client stream get!');
        $http.post('/api/things', { name: data });
-
+       nicoscreen.add(data);
     });
 
   });
