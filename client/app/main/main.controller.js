@@ -16,6 +16,17 @@ angular.module('tweetOnSlideApp')
     nicoscreen.set(obj_2014);
     nicoscreen.start();
 
+    $('.flexslider').flexslider({
+      slideshow: false
+    });
+
+    var elem = document.getElementById('nicoscreen');
+    document.getElementById('nicoscreen').addEventListener('click', function () {
+      if (screenfull.enabled) {
+        screenfull.request(elem);
+      }
+    });
+
 
     $scope.awesomeThings = [];
 
