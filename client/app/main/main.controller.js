@@ -5,14 +5,14 @@ angular.module('tweetOnSlideApp')
     var obj_2014 = {
       "base":{
         color:"white",
-        speed:"normal",
-        interval:"normal",
-        font_size:"60px",
+        speed:10000,
+        interval:700,
+        font_size:"50px",
         loop:false
       },
       "comments":[
       ]
-    };
+    }; //speedとintervalの指定方法変えたからnicoscreenの方見て
     nicoscreen.set(obj_2014);
     nicoscreen.start();
 
@@ -40,7 +40,7 @@ angular.module('tweetOnSlideApp')
         return;
       }
       $http.post('/api/things', { name: $scope.newThing });
-      nicoscreen.add('あああああああああああああああ');
+      nicoscreen.add($scope.newThing);
       $scope.newThing = '';
 
     };
@@ -57,6 +57,6 @@ angular.module('tweetOnSlideApp')
 
        $http.post('/api/things', { name: data });
        nicoscreen.add(data);
-    });
+    });//画面遷移を繰り返すと何本もコネクション張ってる？？
 
   });

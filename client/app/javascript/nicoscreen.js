@@ -30,7 +30,7 @@ r9.NicoScreen = {
 	env : {
 
 		color:"white",
-		interval:500,
+		interval:1000,
 		speed:6500,
 		font_size:"24px",
 		loop:true,
@@ -58,16 +58,18 @@ r9.NicoScreen = {
 
 		if(o.base.interval){
 
-			switch(o.base.interval){
+			this.env.interval=o.base.intaval;
 
-			case "fast":
-				this.env.interval=3000;
-				break;
-			case "slow":
-				this.env.interval=9500;
-				break;
+			// switch(o.base.interval){
 
-			}
+			// case "fast":
+			// 	this.env.interval=3000;
+			// 	break;
+			// case "slow":
+			// 	this.env.interval=9500;
+			// 	break;
+
+			// }
 
 		}
 
@@ -77,16 +79,17 @@ r9.NicoScreen = {
 
 		if(o.base.speed){
 
-			switch(o.base.speed){
+			this.env.speed=o.base.speed;
+			// switch(o.base.speed){
 
-			case "fast":
-				this.env.speed=4000;
-				break;
-			case "slow":
-				this.env.speed=10000;
-				break;
+			// case "fast":
+			// 	this.env.speed=4000;
+			// 	break;
+			// case "slow":
+			// 	this.env.speed=10000;
+			// 	break;
 
-			}
+			// }
 
 		}
 
