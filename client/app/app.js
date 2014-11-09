@@ -6,7 +6,8 @@ angular.module('tweetOnSlideApp', [
   'ngSanitize',
   'ngRoute',
   'btford.socket-io',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'angularFileUpload'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
