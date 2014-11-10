@@ -1,15 +1,18 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
- 	<input type="file" ng-file-select="onFileSelect($files)" multiple accept="image/*">
- 	<input type="file" ng-file-select="onFileSelect($files)" multiple onclick="this.value=null">
- 	<div ng-file-select="onFileSelect($files)" data-multiple="true" title="select file" onclick="this.value = null" class="upload-button">Click here to select file</div>
- 	<div class="button" ng-file-select="onFileSelect($files)" data-multiple="true"></div>
+	<input type="text" name="input" placeholder="ハッシュタグ" ng-model="hashtag" />
+	ハッシュタグ:{{hashtag}}
+	<br>
+	<br>
+ 	<input type="file" ng-file-select="onFileSelect($files)" >
+
  	<div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class-name-or-function"
 	      ng-show="dropSupported">drop files here</div>
 	<div ng-file-drop-available="dropSupported=true"
 	      ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
-	<button ng-click="upload.abort()">Cancel Upload</button>
+	<!-- <button ng-click="upload.abort()">Cancel Upload</button> -->
+	<button ng-click="start(0)">登録！</button>
 	<br>
 	<br>
 	Progress:

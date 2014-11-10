@@ -1,10 +1,21 @@
 'use strict';
 
 angular.module('tweetOnSlideApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, Auth,Content) {
 
+    var successCallback = function(resolveObj) {
+        $scope.contents = resolveObj;
+        console.log($scope.contents);
+        };
+    var errorCallback   = function(rejectObj) { };
+    var notifyCallback  = function(notifyObj) {};
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    //このアカウントで登録したスライドを取得
+    if(Auth.isLoggedIn()){
 
+        Content.get(Auth.getCurrentUser().twitter.screen_name).then(successCallback, errorCallback, notifyCallback);
 
+    }
 
 
     // var obj_2014 = {
