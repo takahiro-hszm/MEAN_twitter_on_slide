@@ -7,7 +7,7 @@
   <div>
   <ul>
     <li ng-repeat="content in contents">
-      {{content.origin_filename}} {{content.account}}
+    <a href="/slide/{{content.hashtag}}">{{content.origin_filename}}</a> {{content.hashtag}}
     </li>
   </ul>
     <a class="btn btn-default btn-lg btn-register" href="/upload">

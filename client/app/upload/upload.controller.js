@@ -6,7 +6,7 @@ window.uploadUrl = window.uploadUrl || 'upload';
 
 
 angular.module('tweetOnSlideApp')
-  .controller('UploadCtrl', function ($scope, $http, $timeout, $upload,Auth) {
+  .controller('UploadCtrl', function ($scope, $http, $timeout, $location,$upload,Auth) {
 
 
 //upload時に、アカウント名、ハッシュタグを送る OK
@@ -100,6 +100,7 @@ angular.module('tweetOnSlideApp')
         $scope.upload[index].then(function(response) {
           $timeout(function() {
             $scope.uploadResult.push(response.data);
+            $location.path('/');
           });
         }, function(response) {
           if (response.status > 0) $scope.errorMsg = response.status + ': ' + response.data;
@@ -108,38 +109,8 @@ angular.module('tweetOnSlideApp')
           $scope.progress[index] = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
         });
         $scope.upload[index].xhr(function(xhr){
-  //        xhr.upload.addEventListener('abort', function() {console.log('abort complete')}, false);
-  });
-      } else if ($scope.howToSend == 2) {
-        //$upload.http()
-        var fileReader = new FileReader();
-        fileReader.onload = function(e) {
-          console.log('file is loaded in filereader');
-          $scope.upload[index] = $upload.http({
-            url: uploadUrl,
-            headers: {'Content-Type': $scope.selectedFiles[index].type},
-            data: e.target.result
-          });
-          $scope.upload[index].then(function(response) {
-            $scope.uploadResult.push(response.data);
-          }, function(response) {
-            if (response.status > 0) $scope.errorMsg = response.status + ': ' + response.data;
-          }, function(evt) {
-            // Math.min is to fix IE which reports 200% sometimes
-            $scope.progress[index] = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-            console.log('progres', Math.min(100, parseInt(100.0 * evt.loaded / evt.total)))
-          });
-          $scope.upload[index].xhr(function(xhr){
-            xhr.upload.addEventListener('progress', function(evt) {
-              console.log('progres2', Math.min(100, parseInt(100.0 * evt.loaded / evt.total)))
-            }, false);
-            xhr.addEventListener('progress', function(evt) {
-              console.log('progres3', Math.min(100, parseInt(100.0 * evt.loaded / evt.total)))
-            }, false);
-          });
-        }
-        fileReader.readAsArrayBuffer($scope.selectedFiles[index]);
-
+         //        xhr.upload.addEventListener('abort', function() {console.log('abort complete')}, false);
+         });
       }
     };
 

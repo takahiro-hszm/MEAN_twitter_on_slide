@@ -1,0 +1,11 @@
+.trash { color:rgb(209, 91, 71); }
+
+
+.window {
+background-color:#ffffff;
+width:1100px;
+height:900px;
+/*padding:40px;*/
+box-sizing:border-box;
+margin: 0 auto;
+}
