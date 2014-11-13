@@ -18,7 +18,26 @@ exports.create = function (req, res, next) {
      newContent.save(function(err, user) {
      	if (err) return validationError(res, err);
      });
+
+
+     var gm = require('gm');
+
+
+     gm('./server/images/a.pdf')
+     .options({imageMagick: true})
+     //.geometry(2000,1500)//サイズの変更　これは無くてもいい
+     .density(300,300)//300,300でいい感じ　数秒かかるので負荷との問題
+     .write('./images/a.jpg', function (err) {
+        if (err) {
+            console.log(err);
+        }else{
+            console.log("success!");
+        }
+    })
+
+
      return res.send("complete!");
+
  };
 
 exports.index = function(req, res) {

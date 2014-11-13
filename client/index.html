@@ -7,9 +7,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <title>Tweets On Slide!</title>
+    <meta name="description" content="あなたのスライドに、流速を">
+    <meta name="keywords" content="twitter,presentation,slide"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="suigin,sayuri,kazuya">
+    <link rel="icon" href="./img/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
@@ -22,11 +25,15 @@
       <!-- injector:css -->
       <link rel="stylesheet" href="app/account/login/login.css">
       <link rel="stylesheet" href="app/admin/admin.css">
-      <link rel="stylesheet" href="app/slide/slide.css">
       <link rel="stylesheet" href="app/app.css">
       <link rel="stylesheet" href="app/main/main.css">
+      <link rel="stylesheet" href="app/slide/slide.css">
+      <link rel="stylesheet" href="app/stylesheets/bootstrap.css">
+      <link rel="stylesheet" href="app/stylesheets/bootstrap.min.css">
+      <link rel="stylesheet" href="app/stylesheets/carousel.css">
       <link rel="stylesheet" href="app/stylesheets/flexslider.css">
       <link rel="stylesheet" href="app/stylesheets/jquery.screenfull.css">
+      <link rel="stylesheet" href="app/stylesheets/mystyle.css">
       <link rel="stylesheet" href="app/upload/upload.css">
       <link rel="stylesheet" href="components/modal/modal.css">
       <!-- endinjector -->
@@ -66,9 +73,12 @@
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
+      <script src="bower_components/holderjs/holder.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
+
+
 
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
@@ -79,6 +89,10 @@
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
+          <script src="app/javascript/bootstrap.js"></script>
+          <script src="app/javascript/bootstrap.min.js"></script>
+          <script src="app/javascript/holder.js"></script>
+          <script src="app/javascript/jquery-1.11.1.min.js"></script>
           <script src="app/javascript/jquery.flexslider-min.js"></script>
           <script src="app/javascript/nicoscreen.js"></script>
           <script src="app/javascript/screenfull.js"></script>
@@ -89,10 +103,10 @@
           <script src="app/js/angular-file-upload.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
-          <script src="app/upload/upload.controller.js"></script>
-          <script src="app/upload/upload.js"></script>
           <script src="app/slide/slide.controller.js"></script>
           <script src="app/slide/slide.js"></script>
+          <script src="app/upload/upload.controller.js"></script>
+          <script src="app/upload/upload.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/content/content.service.js"></script>
@@ -102,5 +116,6 @@
           <script src="components/socket/socket.service.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
+         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
 </html>

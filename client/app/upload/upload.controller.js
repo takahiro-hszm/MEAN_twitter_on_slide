@@ -11,8 +11,9 @@ angular.module('tweetOnSlideApp')
 
 //upload時に、アカウント名、ハッシュタグを送る OK
 //ファイル名はアカウント名とファイル名で生成
-//api側でハッシュタグ、アカウント名、ファイル名→mongo
+//api側でハッシュタグ、アカウント名、ファイル名→mongo OK
 //ダウンロード時はファイル名のみにする
+//ダウンロード用にpdfも保存しておく
 //ハッシュ登録するまで登録できない
 
    $scope.usingFlash = FileAPI && FileAPI.upload != null;
