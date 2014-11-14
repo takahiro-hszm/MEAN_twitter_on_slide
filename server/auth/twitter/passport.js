@@ -2,8 +2,10 @@ exports.setup = function (User, config) {
   var passport = require('passport');
   var TwitterStrategy = require('passport-twitter').Strategy;
 
-  console.log(config.twitter.clientSecret);
-  console.log(config.twitter.clientID);
+  // console.log(config.twitter.clientSecret);
+  // console.log(config.twitter.clientID);
+  // console.log(config.connect_phrase);
+  // console.log(config.conversion_password);
 
   passport.use(new TwitterStrategy({
     consumerKey: config.twitter.clientID,

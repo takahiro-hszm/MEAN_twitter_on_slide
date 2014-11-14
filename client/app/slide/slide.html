@@ -1,10 +1,9 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<p>{{name}}</p>
-
 <div class="window" id="nicoscreen">
     <div class="flexslider" >
       <ul class="slides">
+        <li class="flex-active-slide" ng-repeat="i in getNumber() track by $index"><img src="/images/{{name}}-{{$index}}.jpg"></li>
         <li><img src="/images/g3/g3-0.jpg" ></li>
         <li><img src="/images/g3/g3-1.jpg" ></li>
         <li><img src="/images/g3/g3-2.jpg" ></li>

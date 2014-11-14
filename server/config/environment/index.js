@@ -48,6 +48,8 @@ var all = {
     clientAccessSecret: process.env.TWITTER_ACCESS_SECRET || 'access_secret',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/twitter/callback'
   },
+  connect_phrase:process.env.CONNECT_PHRASE || 'app-id',
+  conversion_password:process.env.CONVERSION_PASSWARD
 
 };
 

@@ -101,7 +101,11 @@ angular.module('tweetOnSlideApp')
         $scope.upload[index].then(function(response) {
           $timeout(function() {
             $scope.uploadResult.push(response.data);
-            $location.path('/');
+            if(response.data.indexOf("success")!= -1){//前方検索
+              $location.path('/');
+            }else{
+              //登録失敗時の処理
+            }
           });
         }, function(response) {
           if (response.status > 0) $scope.errorMsg = response.status + ': ' + response.data;

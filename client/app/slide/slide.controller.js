@@ -3,8 +3,16 @@
 angular.module('tweetOnSlideApp')
   .controller('SlideCtrl', function ($scope, $routeParams,socket) {
 
-    $scope.name=$routeParams.user;
-      var obj_2014 = {
+    var str = $routeParams.user.split(".");
+    $scope.scene = Number(str[0]);
+    $scope.name = str[1];
+
+    $scope.getNumber = function() {
+      return new Array($scope.scene);
+    }
+
+
+    var obj_2014 = {
       "base":{
         color:"white",
         speed:10000,
